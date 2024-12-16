@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentos para Niños</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D8B7DD; /* Fondo lila */
+        }
+        header {
+            background-color: #FFB6C1; /* Color rosado */
+            color: white;
+            padding: 20px;
+            text-align: center; /* Alinear el texto en el centro */
+            width: 100%; /* Asegurarse de que abarque todo el ancho */
+            box-sizing: border-box; /* Para que el padding no afecte el ancho */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 32px; /* Aumentar el tamaño del título */
+            font-weight: bold;
+        }
+        .search-box {
+            margin-top: 10px;
+        }
+        .search-box input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .content {
+            margin-top: 20px;
+        }
+        .content h2 {
+            text-align: center;
+            color: #333;
+        }
+        .story-row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .story-container {
+            margin: 15px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+            width: 250px;
+            box-sizing: border-box; /* Asegurarse de que el padding no afecte el ancho */
+        }
+        .story-container img {
+            max-width: 100%; /* La imagen se ajustará al 100% del ancho de su contenedor */
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px; /* Espacio debajo de la imagen */
+            border: 5px solid #00BFFF; /* Borde celeste alrededor de la imagen */
+        }
+        .story-container .title {
+            margin-top: 10px; /* Espacio entre la imagen y el nombre */
+            font-size: 18px;
+            font-weight: bold;
+            color: #4CAF50; /* Color verde para el título */
+        }
+        .story-container .story {
+            max-width: 100%;
+            margin: 15px auto;
+            text-align: justify; /* Alineación de texto para mejor legibilidad */
+            color: #555;
+        }
+        .hidden {
+            display: none; /* Esconde los cuentos inicialmente */
+        }
+        .story-row .story-container {
+            display: inline-block;
+            vertical-align: top;
+            width: 250px; /* Ajustar el ancho de cada cuento */
+        }
+        #caperucita-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #caperucita-container .story-container {
+            margin-right: 20px; /* Espacio entre la imagen y el texto */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cuentos para Niños</h1>
+        <div class="search-box">
+            <input type="text" placeholder="Buscar...">
+        </div>
+    </header>
+    <div class="content">
+        <h2>Cuentos para Niños</h2>
+
+        <!-- Cuento de Caperucita Roja (imagen y cuento desplegado al lado) -->
+        <div id="caperucita-container">
+            <div id="caperucita" class="story-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTripWDoLIi_bwv1K2DqC6xRJPcz7bNv4uexA&s" alt="Caperucita Roja" onclick="toggleStory('caperucita-story')">
+                <div class="title">Caperucita Roja</div> <!-- Nombre debajo de la imagen -->
+            </div>
+            <div id="caperucita-story" class="story">
+                <h3>Caperucita Roja</h3>
+                <p>Había una vez una niña llamada Caperucita Roja. Un día, su madre le pidió que llevara una cesta con comida a su abuela que vivía al otro lado del bosque. Caperucita Roja se puso su capa roja y se adentró en el bosque. Mientras caminaba, encontró al lobo, que la engañó para que tomara otro camino. El lobo llegó antes que ella a la casa de la abuela, la devoró y se disfrazó de ella. Cuando Caperucita Roja llegó, notó que su abuela estaba diferente, pero antes de poder reaccionar, el lobo la atacó también. Afortunadamente, un cazador que pasaba por ahí escuchó el griterío, entró a la casa y mató al lobo, rescatando a la abuela y a Caperucita Roja. Desde entonces, Caperucita Roja nunca más desobedeció las instrucciones de su madre.</p>
+            </div>
+        </div>
+
+        <!-- Otros cuentos en fila lateral -->
+        <div class="story-row">
+            <!-- El Ratón y el León -->
+            <div id="ratoenyleon" class="story-container">
+                <img src="https://www.mundoprimaria.com/wp-content/uploads/2020/07/cuento-leon-raton.jpg" alt="El Ratón y el León" onclick="toggleStory('ratoenyleon-story')">
+                <div class="title">El Ratón y el León</div> <!-- Nombre debajo de la imagen -->
+                <div id="ratoenyleon-story" class="story hidden">
+                    <h3>El Ratón y el León</h3>
+                    <p>Un pequeño ratón se encontró atrapado bajo una pata de un gran león. El ratón le suplicó al león que lo dejara ir, prometiéndole que algún día le devolvería el favor. El león, pensando que un ratón tan pequeño no podría hacerle daño, lo liberó. Unos días después, el león fue capturado por cazadores y quedó atrapado en una red. El ratón, al escuchar sus rugidos, corrió hacia él, mordió las cuerdas de la red y liberó al león. El león agradeció al ratón por su valentía, demostrando que incluso los más pequeños pueden hacer grandes cosas.</p>
+                </div>
+            </div>
+
+            <!-- Masha y el Oso -->
+            <div id="masha" class="story-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaIEHDcGiQoaMq-2if6-ywfpjxBwhYaxJxiQ&s" alt="Masha y el Oso" onclick="toggleStory('masha-story')">
+                <div class="title">Masha y el Oso</div> <!-- Nombre debajo de la imagen -->
+                <div id="masha-story" class="story hidden">
+                    <h3>Masha y el Oso</h3>
+                    <p>Masha era una niña pequeña y traviesa que vivía en el bosque. Un día se perdió mientras jugaba y encontró la casa de un oso. El oso, que solía vivir solo, la invitó a quedarse. A pesar de las advertencias del oso de que era muy traviesa, Masha comenzó a hacerle muchas bromas. Desordenó la casa del oso, pintó su ropa, y jugó sin parar. A pesar de sus travesuras, el oso se preocupaba mucho por ella y la cuidaba. Con el tiempo, Masha aprendió a comportarse mejor, pero siempre mantenía su espíritu alegre y curioso, y el oso siempre estaba allí para protegerla. Juntos, compartían muchas aventuras divertidas en el bosque.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Más cuentos en fila lateral -->
+        <div class="story-row">
+            <!-- La Liebre y la Tortuga -->
+            <div id="liebreytortuga" class="story-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQba2jOSS_UV3zWZLFW0VWnvjV2_8ak2_Dlzw&s" alt="La Liebre y la Tortuga" onclick="toggleStory('liebreytortuga-story')">
+                <div class="title">La Liebre y la Tortuga</div> <!-- Nombre debajo de la imagen -->
+                <div id="liebreytortuga-story" class="story hidden">
+                    <h3>La Liebre y la Tortuga</h3>
+                    <p>Había una vez una liebre que se jactaba de ser muy rápida. Un día, retó a la tortuga a una carrera. La liebre, confiada en su rapidez, comenzó a correr a gran velocidad, mientras que la tortuga avanzaba lentamente pero sin parar. La liebre, al ver que tenía mucha ventaja, decidió descansar bajo un árbol. Mientras tanto, la tortuga siguió su camino sin detenerse. Cuando la liebre despertó, se dio cuenta de que la tortuga ya había llegado a la meta. La lección fue clara: la perseverancia y la constancia ganan a la arrogancia y la prisa.</p>
+                </div>
+            </div>
+
+            <!-- La Cigüeña María -->
+            <div id="ciguenamaria" class="story-container">
+                <img src="https://i.pinimg.com/736x/74/d3/f9/74d3f9ba0f3d85ec6b72f2cef9ba06a6.jpg" alt="La Cigüeña María" onclick="toggleStory('ciguenamaria-story')">
+                <div class="title">La Cigüeña María</div> <!-- Nombre debajo de la imagen -->
+                <div id="ciguenamaria-story" class="story hidden">
+                    <h3>La Cigüeña María</h3>
+                    <p>María era una cigüeña que vivía en una granja. Cada año, ella volaba lejos para migrar, pero siempre volvía para anidar en el mismo lugar. Un día, María encontró un nido vacío y decidió adoptar un huevo que encontró cerca. Cuando el huevo eclosionó, salió un patito que pensaba que era una cigüeña. María lo cuidó como su propio hijo, enseñándole a volar y a pescar, pero un día, cuando el patito vio otras aves, se dio cuenta de que no era como ellas. Sin embargo, María le recordó que lo más importante era ser fiel a sí mismo y que el amor que le brindaba era lo que realmente importaba.</p>
+                </div>
+            </div>
+
+            <!-- El Patito Feo -->
+            <div id="patitofeo" class="story-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFEtjwfnmF9HzWiOLygiJWqczOP1MFa4xTwA&s" alt="El Patito Feo" onclick="toggleStory('patitofeo-story')">
+                <div class="title">El Patito Feo</div> <!-- Nombre debajo de la imagen -->
+                <div id="patitofeo-story" class="story hidden">
+                    <h3>El Patito Feo</h3>
+                    <p>Había una vez un patito que nació diferente a los demás. Sus hermanos y hermanas lo rechazaron porque no se veía igual. El patito fue rechazado por todos y vivió triste y solo. Un día, al crecer, se dio cuenta de que había hecho un gran cambio. Ahora era un hermoso cisne que todos admiraban. Al final, comprendió que no importaba cómo empezara, lo que realmente importaba era cómo terminaba, y su belleza fue reconocida por todos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar u ocultar los cuentos
+        function toggleStory(storyId) {
+            var story = document.getElementById(storyId);
+            // Cambiar la visibilidad del cuento
+            if (story.classList.contains('hidden')) {
+                story.classList.remove('hidden'); // Mostrar el cuento
+            } else {
+                story.classList.add('hidden'); // Ocultar el cuento
+            }
+        }
+    </script>
+</body>
+</html>
+
